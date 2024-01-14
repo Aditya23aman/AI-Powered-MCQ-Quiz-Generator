@@ -5,6 +5,7 @@ import os
 
 
 def config():
+    '''Used to retrive Api key and connect to api'''
     load_dotenv()
     openai.api_key = os.getenv('API_KEY')
 
@@ -20,6 +21,8 @@ def initialize_database():
     conn.close()
 
 def generate_questions(text):
+    
+    # initilizing the database and api connection. 
     initialize_database()
     config()
 
@@ -30,7 +33,7 @@ def generate_questions(text):
     # openAi prompt
     prompt = f"Create a practice test with multiple choice questions on the following text:\n{text}" \
              f"Each question should be on a different line. Each question should have 4 possible answers. "\
-             f"Under the possible answers we should have the correct answer."  
+             f"At the end after all the questions, we should have all the correct answer with respective question number."  
 
     #respons
     response = openai.Completion.create(
