@@ -10,11 +10,11 @@ The various tools and libraries used are:
 - OpenAi API
 - Bootstrap 
 
-- The web pages follow the Django framewor design approach with the layout defined in "layout.html." By using the ``extends`` command subsequent pages are imported this layout to maintain consistency and manage them efficiently. The primary elements of the design included in the layout consist of a navigation bar and simple text forms. The coding logic is encapsulated within the services.py file, while views.py and url.py are used for integration of front-end and back-end features. 
+- The web pages follow the Django framewor design approach with the layout defined in ```layout.html.``` By using the ``extends`` command subsequent pages are imported this layout to maintain consistency and manage them efficiently. The primary elements of the design included in the layout consist of a navigation bar and simple text forms. The coding logic is encapsulated within the ```services.py``` file, while ```views.py``` and ```url.py``` are used for integration of front-end and back-end features. 
 
 - The SQLite3 database serves as the repository for all quiz-related data within the system. This information is structured and organized in a table with columns: a unique id, the initial question of each quiz, and the entirety of the quiz data. The unique id and the first question column are employed to facilitate the presentation of database content on the history web page, ensuring a coherent and meaningful display of quiz records.
 
-- The text processing is executed utilizing OpenAI's GPT-3.5-turbo-instruct engine. Subsequently, the API response undergoes parsing wherein the relevant text is extracted for display purposes. To secure access to the API, the requisite secret key is confidentially stored in a '.env' file, and its retrieval is done using dotenv Python library. For local deployment, it is recommended to create a '.env' file within the '/quiz/' directory and store the API key with the format 'API_KEY= ???'.
+- The text processing is executed utilizing OpenAI's ```GPT-3.5-turbo-instruct``` engine. Subsequently, the API response undergoes parsing wherein the relevant text is extracted for display purposes. To secure access to the API, the requisite secret key is confidentially stored in a '.env' file, and its retrieval is done using dotenv Python library. For local deployment, it is recommended to create a '.env' file within the '/quiz/' directory and store the API key with the format 'API_KEY= ???'.
 
 - The design elements are made using Bootstrap with fundamental CSS. Currently, there is no implementation of JavaScript code. 
 
