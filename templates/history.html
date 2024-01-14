@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h3> History</h3>       
+    <ul>
+        {% for n in data %}
+            <li>{{n}}</li>
+        {% endfor %}
+    </ul>
+    </div>
+
+    <div class="container">
+        <h3>Enter the id of quiz you want to download?</h3>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="form-group">
+                <textarea class="form-control" name="quiz_id" required placeholder="Please provide the id number of quiz you want to download.."></textarea>
+            </div>                 
+            <!-- <input type="submit" value="Download"> -->
+            <button type="submit" value="Download" class="btn btn-primary">Download</button>
+        </form>
+
+    </div>
+{% endblock %}
